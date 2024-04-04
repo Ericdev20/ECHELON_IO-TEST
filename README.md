@@ -6,8 +6,6 @@ Ce projet a été développé dans le cadre du test pour le poste de développeu
 
 - Développement de l'interface web conforme à la maquette Figma fournie.
 - Intégration de l'API Rest selon la documentation fournie.
-- Gestion des states entre l'écran des tâches et la page de détails pour éviter le rafraîchissement de la page de listing.
-- Versionnement du projet sur GitHub en tant que projet public.
 
 ## Installation
 

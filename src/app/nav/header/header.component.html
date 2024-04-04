@@ -1,0 +1,85 @@
+<nav
+  class="navbar navbar-light position-lg-sticky top-lg-0 d-none d-lg-block overlap-10 flex-none bg-white border-bottom px-0 py-3"
+  id="topbar"
+>
+  <div class="container-fluid">
+    <div class="hstack gap-2"><h3>Explore Task</h3></div>
+    <div class="navbar-user d-block">
+      <div class="hstack gap-3 ms-4">
+        <div class="dropdown">
+          <a
+            href="#"
+            class="nav-link px-3 text-base text-muted text-opacity-70 text-opacity-100-hover"
+            id="dropdown-notifications"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            ><i class="bi bi-bell-fill"></i
+          ></a>
+          <div
+            class="dropdown-menu dropdown-menu-end px-2"
+            aria-labelledby="dropdown-notifications"
+          >
+            <div class="dropdown-item py-2 text-center">
+              <a href="#" class="font-semibold text-muted text-primary-hover"
+                >Aucune Notification ...
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="d-flex align-items-center" href="#"
+            ><div>
+              <div class="avatar avatar-sm bg-warning rounded-circle">
+                <img
+                  style="object-fit: cover"
+                  alt="..."
+                  src="https://shorturl.at/lqtLT"
+                />
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- row-2 -->
+  <div class="container-fluid my-4">
+    <div style="width: 100%" class="d-flex justify-content-between">
+      <div class="form-search">
+        <form class="form-group mx-5">
+          <div class="input-group input-group-inline border px-2">
+            <input
+              type="text"
+              class="form-control form-control-flush"
+              placeholder="Search Task"
+              aria-label="Search"
+            />
+            <span class="input-group-text border-0 shadow-none ps-0 pe-3"
+              ><i class="bi bi-search"></i>
+            </span>
+          </div>
+        </form>
+      </div>
+      <div class="me-5 sort-group d-flex">
+        <div>
+          <button
+            type="button"
+            class="btn btn-sm mx-5 py-3 px-3 btn-neutral d-flex align-items-center"
+          >
+            <i class="bi bi-grid-1x2 me-2"></i> <span>Category</span>
+          </button>
+        </div>
+        <div>
+          <button
+            type="button"
+            class="btn btn-sm px-3 py-3 btn-neutral d-flex align-items-center"
+          >
+            <i class="bi bi-filter me-2"></i>
+            <span class="mx-2">Sort By</span> :
+            <span class="text-2xs text-dark mx-2">Deadline</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

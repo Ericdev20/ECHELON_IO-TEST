@@ -1,0 +1,175 @@
+<p-toast></p-toast>
+<div class="container marg-sm">
+  <div class="row p-5">
+    <div class="col-md-8 mb-5" *ngIf="!isLoading; else taskDetailsLoad">
+      <div class="contener-fluid mx-3 bg-white rounded-5">
+        <div class="row">
+          <div class="img-task">
+            <img [src]="task?.image" class="rounded-5" />
+          </div>
+          <div class="px-5 my-5">
+            <div class="detail-task">
+              <h2>{{ task?.title }}</h2>
+            </div>
+            <div class="subtitle d-flex my-3">
+              <span class="m"> {{ task?.domain }} | </span>
+              <a href="" style="color: #149cfc"> + Get Mentors</a>
+            </div>
+            <div class="more-detail d-flex text-dark my-5">
+              <div class="student me-5">
+                <i class="bi bi-people me-1"></i>{{ task?.participants?.length
+                }}<span class="mx-3">participants</span>
+              </div>
+              <div class="time">
+                <i class="bi bi-clock me-1"></i
+                >{{ task?.nombre_heures }}&nbsp;heures
+              </div>
+            </div>
+            <div class="description pb-5">
+              <div class="title h2 mb-4">Description</div>
+              <div class="content text-dark" style="text-align: justify">
+                {{ task?.description }}
+              </div>
+            </div>
+            <div class="essence">
+              <div class="title h2 mb-3">Essence of Assessment</div>
+
+              <div class="content">
+                <ul class="ul" style="line-height: 2; text-align: justify">
+                  <li
+                    class="py-2"
+                    *ngFor="let essence of task?.essence_of_assessment"
+                  >
+                    <h6>{{ essence }}</h6>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 part-2">
+      <div class="contener-fluid mx-3 bg-white rounded-5">
+        <div class="row px-4">
+          <div class="information my-5">
+            <h5>Assigned Assignments</h5>
+            <div class="h2 my-5">{{ task?.title }}</div>
+            <span class="m">{{ task?.domain }}</span>
+          </div>
+          <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+            <div class="form-submission mb-5 my-5">
+              <div class="h2 mb-5">Detail Student</div>
+              <div class="row g-5">
+                <div class="col-md-12">
+                  <div>
+                    <label class="form-label">Nom</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      formControlName="lastname"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div>
+                    <label class="form-label">Prénom</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      formControlName="firstname"
+                    />
+                  </div>
+                </div>
+                <div class="upload-part">
+                  <h3 class="my-5">Photo</h3>
+                  <div class="col-md-12">
+                    <div class="">
+                      <label class="form-label">File submissions</label>
+                      <div class="file-box" (click)="fileInput.click()">
+                        <input
+                          type="file"
+                          #fileInput
+                          style="display: none"
+                          (change)="onFileSelected($event)"
+                        />
+                        <i
+                          class="bi bi-folder"
+                          [class.hidden]="
+                            studentForm.get('photo')?.value !== null
+                          "
+                        ></i>
+                        <div *ngIf="previewUrl" class="mt-3">
+                          <img
+                            [src]="previewUrl"
+                            alt="Preview"
+                            class="rounded file-preview-image"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button
+              type="submit"
+              class="my-5 submit-btn btn btn-md btn-primary"
+              style="width: 100%"
+              [disabled]="sendLoad"
+            >
+              <div *ngIf="sendLoad" class="spinner-border" role="status"></div>
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #taskDetailsLoad>
+  <div class="col-md-8 mb-5">
+    <div class="contener-fluid mx-3 bg-white rounded-5">
+      <div class="row d-flex">
+        <div class="img-task">
+          <p-skeleton
+            class="rounded-5"
+            width="100%"
+            height="300px"
+            borderRadius="16px"
+          ></p-skeleton>
+        </div>
+        <div class="my-3 px-5">
+          <p-skeleton width="100%" styleClass="mb-2"></p-skeleton>
+          <p-skeleton width="75%"></p-skeleton>
+        </div>
+        <div class="w-40 px-5 d-flex justify-content-between mt-4">
+          <p-skeleton width="4rem" styleClass="mb-2"></p-skeleton>
+          <p-skeleton width="2rem" styleClass="mb-2"></p-skeleton>
+        </div>
+        <div class="my-5 px-5 d-flex">
+          <p-skeleton width="5rem" styleClass="mb-2"></p-skeleton>
+          <p-skeleton width="7rem" styleClass="mb-2"></p-skeleton>
+        </div>
+        <div class="my-5 px-5 d-flex">
+          <h1><p-skeleton width="9rem" styleClass="mb-2"></p-skeleton></h1>
+        </div>
+        <div class="my-5 px-5">
+          <p-skeleton width="100%" styleClass="mb-2"></p-skeleton>
+          <p-skeleton width="100%" styleClass="mb-2"></p-skeleton>
+          <p-skeleton width="100%" styleClass="mb-2"></p-skeleton>
+          <p-skeleton width="75%"></p-skeleton>
+        </div>
+        <div class="my-2 px-5 d-flex">
+          <h1><p-skeleton width="9rem" styleClass="mb-2"></p-skeleton></h1>
+        </div>
+        <div class="my-3 px-5">
+          <p-skeleton width="100%" styleClass="mb-2"></p-skeleton>
+          <p-skeleton width="100%" styleClass="mb-2"></p-skeleton>
+          <p-skeleton width="100%" styleClass="mb-2"></p-skeleton>
+          <p-skeleton width="100%"></p-skeleton>
+        </div>
+      </div>
+    </div></div
+></ng-template>

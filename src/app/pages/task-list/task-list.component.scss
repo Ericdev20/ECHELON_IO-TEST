@@ -1,0 +1,17 @@
+.task-card {
+  cursor: pointer;
+}
+.no-task-message {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #555;
+}
+.task-card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 20px;
+}

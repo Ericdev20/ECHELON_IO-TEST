@@ -14,7 +14,7 @@ Ce projet a été développé dans le cadre du test pour le poste de développeu
 1. Clonez ce dépôt GitHub sur votre machine locale :
 
 ```
-git clone https://github.com/Ericdev20/ECHELON-APP.git
+git clone https://github.com/Ericdev20/ECHELON_IO-TEST.git
 
 ```
 
